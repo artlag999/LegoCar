@@ -73,11 +73,18 @@
                         </li>
                     </ul>
                     <button class="menu__btn">
-                        <svg width="35" height="35" viewbox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="menu-btn__svg menu-btn__svg--is-close active" width="35" height="35" viewbox="0 0 35 35"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M4.375 25.2917C4.375 26.0971 5.02792 26.75 5.83333 26.75H29.1667C29.9721 26.75 30.625 26.0971 30.625 25.2917C30.625 24.4863 29.9721 23.8333 29.1667 23.8333H5.83333C5.02792 23.8333 4.375 24.4863 4.375 25.2917ZM4.375 18C4.375 18.8054 5.02792 19.4583 5.83333 19.4583H29.1667C29.9721 19.4583 30.625 18.8054 30.625 18C30.625 17.1946 29.9721 16.5417 29.1667 16.5417H5.83333C5.02792 16.5417 4.375 17.1946 4.375 18ZM5.83333 9.25C5.02792 9.25 4.375 9.90292 4.375 10.7083C4.375 11.5137 5.02792 12.1667 5.83333 12.1667H29.1667C29.9721 12.1667 30.625 11.5137 30.625 10.7083C30.625 9.90292 29.9721 9.25 29.1667 9.25H5.83333Z"
                                 fill="#0B457F" />
                         </svg>
+                        <svg class="menu-btn__svg menu-btn__svg--is-open" width="35" height="35" viewbox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M26.542 11.2799L24.7208 9.45868L17.5003 16.6791L10.2799 9.45868L8.45868 11.2799L15.6791 18.5003L8.45868 25.7208L10.2799 27.542L17.5003 20.3216L24.7208 27.542L26.542 25.7208L19.3216 18.5003L26.542 11.2799Z"
+                                fill="#0B457F" />
+                        </svg>
+
                     </button>
                 </nav>
                 <button class="header__phone">Заказать звонок</button>
@@ -184,6 +191,19 @@
             </div>
         </section>
     </main>
+
+
+    <script>
+        let menuIsClose = document.querySelector(".menu-btn__svg--is-close")
+        let menuIsOpen = document.querySelector(".menu-btn__svg--is-open")
+        let menu = document.querySelector(".menu__list")
+        let menuBtn = document.querySelector(".menu__btn")
+        menuBtn.addEventListener("click", () => {
+            menu.classList.toggle("active")
+            menuIsClose.classList.toggle("active")
+            menuIsOpen.classList.toggle("active")
+        })
+    </script>
 </body>
 
 </html>
